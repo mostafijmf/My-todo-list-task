@@ -8,6 +8,7 @@ const AddTask = ({ setOpenAddForm }) => {
         localStorage.setItem('taskData', JSON.stringify([
             ...taskData,
             {
+                id: (taskData?.id + 1) || 1,
                 task: e.target.task.value,
                 priority: e.target.priority.value,
                 isComplete: false,

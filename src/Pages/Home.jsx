@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import AddTask from '../Components/AddTask';
+import { taskData } from '../Helpers/GetTaskData';
+import TaskList from '../Components/TaskList';
 
 const Home = () => {
     const [openAddForm, setOpenAddForm] = useState(false);
@@ -17,6 +19,19 @@ const Home = () => {
                 </div>
                 {openAddForm ? <AddTask setOpenAddForm={setOpenAddForm} /> : null}
             </header>
+            <section>
+                {taskData.length > 0 ?
+                    <ul className='mt-5 flex flex-col gap-y-5'>
+                        {
+                            taskData.map((data, index) => <TaskList key={index} data={data} />)
+                        }
+                    </ul>
+                    :
+                    <>
+                        <p>No tasks to show</p>
+                    </>
+                }
+            </section>
         </div>
     );
 };
