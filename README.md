@@ -1,9 +1,55 @@
-# React + Vite
+# My Todo Task
+My Todo Task is a sample project where users can add, edit, delete, and filter Tasks.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Live link 
+[Click](https://my-todo-task-list.netlify.app/)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# My-todo-list-task
+## Installation and Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/mostafijmf/My-todo-list-task.git
+```
+
+Go to the project directory
+
+```bash
+  cd My-todo-list-task
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
+
+## 💻 Tech Stack:
+
+React ([react-vite](https://vitejs.dev/guide/#trying-vite-online)), TailwindCSS
+
+## Color Reference
+
+| Color             | Hex                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| Primary Color Indigo| ![#4F46E5](https://via.placeholder.com/10/7c3aed?text=+) #4F46E5 |
+
+
+
+## Overview
+
+- In this project, React was used for frontend development.
+
+- Also TailwindCSS is used for styling.
+
+- Users can add, edit, delete, and filter tasks.
+
+- Responsive and User friendly.
