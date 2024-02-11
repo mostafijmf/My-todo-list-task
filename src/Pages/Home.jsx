@@ -8,7 +8,7 @@ const Home = () => {
     const [priority, setPriority] = useState(null);
 
     return (
-        <div className='max-w-3xl w-full h-full mx-auto py-10'>
+        <div className='max-w-3xl lg:w-full w-11/12 h-full mx-auto py-10'>
             <header>
                 <h1 className='text-2xl font-medium text-center uppercase text-gray-600 pb-2 mb-5 border-b'>
                     Todo List
@@ -24,9 +24,9 @@ const Home = () => {
                         }
                     </ul>
                     :
-                    <>
+                    <div>
                         <p className='text-center py-20 text-xl text-gray-600'>No tasks to show! <br />Please add task</p>
-                    </>
+                    </div>
                 }
             </section>
         </div>

@@ -42,7 +42,7 @@ const AddTask = ({ setOpenAddForm, data = '' }) => {
         <div className='fixed inset-0 bg-black/60 grid place-items-center'>
             <form
                 onSubmit={handleSaveTask}
-                className='max-w-xl w-full h-max p-10 rounded-md bg-white text-base text-gray-700'
+                className='max-w-xl w-11/12 h-max md:p-10 p-8 rounded-md bg-white text-base text-gray-700'
             >
                 <div>
                     <label htmlFor='task' className='font-medium mb-2 block'>Add Task</label>

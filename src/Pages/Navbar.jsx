@@ -11,7 +11,7 @@ const Navbar = ({ taskData, setPriority }) => {
     return (<>
         {openAddForm ? <AddTask setOpenAddForm={setOpenAddForm} /> : null}
         <div>
-            <div className='flex justify-between items-center text-base font-medium text-gray-700'>
+            <div className='flex md:flex-row flex-col justify-between items-center gap-5 text-base font-medium text-gray-700'>
                 <div>
                     <p>Total Task ({taskData.length})</p>
                 </div>
