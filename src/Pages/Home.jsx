@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import AddTask from '../Components/AddTask';
-import { taskData } from '../Helpers/GetTaskData';
+import useGetTaskData from '../Hooks/useGetTaskData';
 import TaskList from '../Components/TaskList';
 
 const Home = () => {
     const [openAddForm, setOpenAddForm] = useState(false);
+    const [taskData] = useGetTaskData();
+
     return (
         <div className='max-w-3xl w-full h-full mx-auto py-10'>
             <header>
@@ -28,7 +30,7 @@ const Home = () => {
                     </ul>
                     :
                     <>
-                        <p>No tasks to show</p>
+                        <p className='text-center py-20 text-xl text-gray-600'>No tasks to show! <br />Please add task</p>
                     </>
                 }
             </section>

@@ -1,19 +1,40 @@
-import { taskData } from "../Helpers/GetTaskData";
+import useGetTaskData from "../Hooks/useGetTaskData";
 
-const AddTask = ({ setOpenAddForm }) => {
+const AddTask = ({ setOpenAddForm, data = '' }) => {
+    const [taskData] = useGetTaskData();
 
     // <!-- Save Task Data to Local Storage -->
     const handleSaveTask = (e) => {
         e.preventDefault();
-        localStorage.setItem('taskData', JSON.stringify([
-            ...taskData,
-            {
-                id: (taskData?.id + 1) || 1,
+
+        // <!-- Edit Task -->
+        if (data) {
+            let index;
+            const filter = taskData.filter((f, i) => {
+                if (f.id === data.id) index = i;
+                return f.id !== data.id;
+            });
+            filter.splice(index, 0, {
+                id: data.id,
                 task: e.target.task.value,
                 priority: e.target.priority.value,
-                isComplete: false,
-            }
-        ]));
+                isComplete: data.isComplete,
+            });
+            localStorage.setItem('taskData', JSON.stringify(filter));
+        }
+        // <!-- Add new Task -->
+        else {
+            localStorage.setItem('taskData', JSON.stringify([
+                ...taskData,
+                {
+                    id: Math.floor(Math.random() * 900000) + 100000,
+                    task: e.target.task.value,
+                    priority: e.target.priority.value,
+                    isComplete: false,
+                }
+            ]));
+        }
+        window.location.reload();
         setOpenAddForm(false);
     };
 
@@ -30,6 +51,7 @@ const AddTask = ({ setOpenAddForm }) => {
                         type='text'
                         placeholder='Type here...'
                         required
+                        defaultValue={data.task}
                         className='w-full h-11 px-5 outline-none border border-indigo-600 rounded'
                     />
                 </div>
@@ -40,9 +62,9 @@ const AddTask = ({ setOpenAddForm }) => {
                         id='priority'
                         className='w-full h-11 px-5 outline-none border border-indigo-600 rounded'
                     >
-                        <option value='Low'>Low</option>
-                        <option value='Medium'>Medium</option>
-                        <option value='High'>High</option>
+                        <option value='Low' defaultValue={data.priority}>Low</option>
+                        <option value='Medium' defaultValue={data.priority}>Medium</option>
+                        <option value='High' defaultValue={data.priority}>High</option>
                     </select>
                 </div>
                 <div className='mt-12 flex items-center gap-x-16'>
