@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useGetTaskData = () => {
+const useGetTask = () => {
     const [taskData, setTaskData] = useState([]);
     const task = JSON.parse(localStorage.getItem('taskData')) || [];
 
@@ -11,4 +11,4 @@ const useGetTaskData = () => {
     return [taskData];
 };
 
-export default useGetTaskData;
+export default useGetTask;

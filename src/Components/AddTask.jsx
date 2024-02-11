@@ -1,7 +1,7 @@
-import useGetTaskData from "../Hooks/useGetTaskData";
+import useGetTask from "../Hooks/useGetTask";
 
 const AddTask = ({ setOpenAddForm, data = '' }) => {
-    const [taskData] = useGetTaskData();
+    const [taskData] = useGetTask();
 
     // <!-- Save Task Data to Local Storage -->
     const handleSaveTask = (e) => {
