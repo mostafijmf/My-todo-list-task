@@ -45,10 +45,10 @@ const TaskList = ({ data }) => {
                     </p>
                 </div>
                 <div className="md:w-max w-full flex items-center justify-between gap-6">
-                    <div className="mr-4">
+                    <div className="">
                         {
                             data.isComplete ?
-                                <button disabled className="w-full text-indigo-600 bg-indigo-100 py-2 px-5 text-base font-medium rounded">
+                                <button disabled className="w-max text-indigo-600 bg-indigo-100 py-2 px-5 text-base font-medium rounded">
                                     &#10003; Completed
                                 </button>
                                 :
